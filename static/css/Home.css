@@ -1,0 +1,14 @@
+body {
+    height: 100%;
+    background-color: #f8f8f8;
+
+}
+
+.header {
+    background-color: #5ead5a;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10 ;
+}
