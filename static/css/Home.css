@@ -6,9 +6,11 @@ body {
 
 .header {
     background-color: #5ead5a;
+    text-align: center;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 10 ;
+    font-family: Arial, Helvetica, sans-serif;
 }
