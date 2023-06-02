@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 
-	_ "github.com/go-sql-driver/mysql"
+	_ "github.com/mattn/go-sqlite3"
 )
 
 type Data struct {
@@ -31,7 +31,7 @@ func homeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Co_BDD() {
-	db, err := sql.Open("mysql", "root:Paf151004!@tcp(localhost:3306)/BDD_Forum")
+	db, err := sql.Open("sqlite3", "")
 	if err != nil {
 		fmt.Println("Erreur lors de la connexion à la base de données:", err)
 		return
