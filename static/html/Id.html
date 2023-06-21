@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>identification</title>
+</head>
+
+<body>
+    <div class = "header">
+        <p>Identifiez-vous</p>
+    </div>
+    <div class = "page">
+        <form action="{{.Action}}" method="post">
+            <input name="Id" type="text" placeholder="Identifiant" required>
+            <input name="Mdp" type="password" placeholder="mot de passe" required>
+            <button>s'identifier</button>
+        </form>
+        <p>{{.Message}}</p>
+        <p>Pas encore de compte ?</p>
+        <a href="/signUp">Identifiez-vous !</a>
+    </div>
+</body>
+
+</html>

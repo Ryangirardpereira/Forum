@@ -7,18 +7,22 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func add_db(pw string, email string, f_name string, l_name string) {
-	db, err := sql.Open("sqlite3", "../db.db")
-	if err != nil {
-		fmt.Println("erreur lors de la connexion", err)
+func New_user(nameUser string, mdpUser string, emailUser string, birthday string, sport string) {
+	db, errOpen := sql.Open("sqlite3", "db.db")
+
+	if errOpen != nil {
+		fmt.Println("erreur :", errOpen)
 		return
 	}
 
-	defer db.Close()
+	statement, err := db.Prepare("INSERT INTO User (pw,username,email,birthday,sport) VALUES(?,?,?,?,?)")
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("error Prepare new user")
+		return
+	}
+	statement.Exec(mdpUser, nameUser, emailUser, birthday, sport)
+	db.Close()
 
-	query := "INSERT INTO user (password, username, email, first_name, last_name) values (?,?,?,?,?)"
-
-	db.Query(query, pw, email, f_name, l_name)
-
-	fmt.Println("un nouvel utilisateur nous a rejoint")
+	fmt.Println("OK")
 }
