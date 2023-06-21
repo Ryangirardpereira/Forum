@@ -24,6 +24,8 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	nameUser := r.FormValue("Id")
 	mdp := r.FormValue("Mdp")
 
+	fmt.Println(nameUser)
+
 	if nameUser != "" && mdp != "" {
 		if dev.Check_log(nameUser, mdp) != 0 {
 			acte.Action = "/"
