@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"Forum/Forum/static/dev"
+	"Forum/static/dev"
 	"net/http"
 )
 

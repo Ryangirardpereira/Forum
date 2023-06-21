@@ -1,10 +1,6 @@
 package handler
 
 import (
-<<<<<<< HEAD
-=======
-	"Forum/static/dev"
->>>>>>> f751755 (last update)
 	"fmt"
 	"net/http"
 	"text/template"
