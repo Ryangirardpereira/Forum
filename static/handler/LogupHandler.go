@@ -12,6 +12,5 @@ func LogupHandler(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	recupForm(r)
-	t.Execute(w, nil)
+	t.Execute(w, Acte)
 }

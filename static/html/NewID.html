@@ -13,7 +13,7 @@
             <p>Identifiez-vous</p>
         </div>
         <div class = "page">
-            <form action="/signUp" method="post">
+            <form action="/signUpForm" method="post">
                 <input type="text" name ="Identifiant"placeholder="Identifiant" required>
                 <input type="password" name="Mdp" placeholder="mot de passe" required>
                 <input type="email" name="Email" placeholder="email" required>
@@ -21,6 +21,7 @@
                 <input type="text" name="Sport" placeholder="sport">
                 <button>s'identifier</button>
             </form>
+            <p>{{.Message}}</p>
             <p>Déjà un compte ?</p>
             <a href="/signIn">connectez-vous !</a>
         </div>

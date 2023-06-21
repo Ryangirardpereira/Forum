@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func recupForm(r *http.Request) {
+func RecupForm(w http.ResponseWriter, r *http.Request) {
 	name := r.FormValue("Identifiant")
 	mdp := dev.Hash(r.FormValue("Mdp"))
 	email := r.FormValue("Email")
@@ -14,4 +14,5 @@ func recupForm(r *http.Request) {
 	if name != "" && mdp != "" && email != "" {
 		dev.New_user(name, mdp, email, date, sport)
 	}
+	HomeHandler(w, r)
 }

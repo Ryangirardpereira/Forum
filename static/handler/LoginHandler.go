@@ -1,6 +1,7 @@
 package handler
 
 import (
+	// "Forum/Forum/static/dev"
 	"Forum/Forum/static/dev"
 	"fmt"
 	"net/http"
@@ -12,7 +13,7 @@ type Action struct {
 	Message string
 }
 
-var acte Action
+var Acte Action
 
 func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	t, err := template.ParseFiles("Forum/static/html/Id.html")
@@ -24,16 +25,14 @@ func LoginHandler(w http.ResponseWriter, r *http.Request) {
 	nameUser := r.FormValue("Id")
 	mdp := r.FormValue("Mdp")
 
-	fmt.Println(nameUser)
-
 	if nameUser != "" && mdp != "" {
 		if dev.Check_log(nameUser, mdp) != 0 {
-			acte.Action = "/"
+			Acte.Action = "/"
 		} else {
-			acte.Action = "/signIn"
-			acte.Message = "L'identifiant ou le mot de passe n'est pas valide !"
+			Acte.Action = "/signIn"
+			Acte.Message = "L'identifiant ou le mot de passe n'est pas valide !"
 		}
 	}
-	t.Execute(w, acte)
+	t.Execute(w, Acte)
 
 }
